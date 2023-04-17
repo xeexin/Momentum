@@ -1,13 +1,18 @@
-const daysOfWeek = ["mon", "tue", "wed", "thu", "fir", "sat"]; // list of data
+const player = {
+    name : "heejin",
+    points : 10,
+    fat : true,
+}
 
-const nonSensce = [1, 2, "hello", false, null, undefined, true];
+console.log(player);
+console.log(player.name);
 
-//Get Item from Array
-console.log(daysOfWeek[0]);
+player.fat = false;
+console.log(player);
 
+player.lastName = "lim";
+console.log(player);
 
-console.log(daysOfWeek);
-// Add one more day to the array
-daysOfWeek.push("sun")
+player.points = 15;
+console.log(player);
 
-console.log(daysOfWeek);
