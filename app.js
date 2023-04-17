@@ -1,9 +1,5 @@
-const a = 10;
-const b = 2;
-const myName = "heejin"
+const amIFat = false;
+let something;
 
-console.log(a + b);
-console.log(a * b);
-console.log(a / b);
-
-console.log("Hello " + myName);
+console.log(amIFat);
+console.log(something);
