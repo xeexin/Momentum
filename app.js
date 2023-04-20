@@ -1,18 +1,5 @@
-const player = {
-    name : "heejin",
-    points : 10,
-    fat : true,
-}
+const title = document.querySelector(".hello h1");
+console.log(title);
 
-console.log(player);
-console.log(player.name);
-
-player.fat = false;
-console.log(player);
-
-player.lastName = "lim";
-console.log(player);
-
-player.points = 15;
-console.log(player);
-
+const titles = document.querySelectorAll(".hello h1");
+console.log(titles);
