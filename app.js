@@ -6,7 +6,8 @@ const loginButton = loginForm.querySelector("button");
 // const loginButton = document.querySelector("#login-form button");
 
 function onLoginBtn(){
-    console.log(loginInput.value);
+    const userName = loginInput.value;
+
 }
 
 loginButton.addEventListener("click", onLoginBtn)
