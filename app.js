@@ -1,12 +1,12 @@
-const h1 = document.querySelector("div.hello:first-child h1");
-console.dir(h1);
+const loginForm = document.getElementById("login-form");
+const loginInput = loginForm.querySelector("input");
+const loginButton = loginForm.querySelector("button");
 
-function handleH1Click(){
-    h1.classList.toggle("clicked"); 
+// const loginInput = document.querySelector("#login-form input");
+// const loginButton = document.querySelector("#login-form button");
+
+function onLoginBtn(){
+    console.log(loginInput.value);
 }
 
-
-//MDL : https://developer.mozilla.org/en-US/docs/Web/API/HTMLHeadingElement
-
-h1.addEventListener("click", handleH1Click);
-//h1.onclick = handleh1Click;
+loginButton.addEventListener("click", onLoginBtn)
