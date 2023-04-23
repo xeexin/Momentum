@@ -6,18 +6,18 @@ const greeting = document.querySelector("#greeting");
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
 
-function paintGreetings(name){
-    greeting.innerText = `Hello ${name}`;
+function paintGreetings(){
+    const username = localStorage.getItem("username");
+    greeting.innerText = `Hello ${username}`;
     greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
 function onLoginSubmit(event) {
   event.preventDefault();
   loginForm.classList.add(HIDDEN_CLASSNAME);
-  const username = loginInput.value;
   localStorage.setItem(USERNAME_KEY,username);
   console.log(username);
-  paintGreetings(username);
+  paintGreetings();
 }
 
 const savedUserName = localStorage.getItem(USERNAME_KEY);
@@ -28,6 +28,6 @@ if( savedUserName === null) {
     loginForm.addEventListener("submit", onLoginSubmit);
 } else{
     // show h1
-    paintGreetings(savedUserName);
+    paintGreetings();
 }
 
