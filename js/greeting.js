@@ -14,6 +14,7 @@ function paintGreetings(){
 
 function onLoginSubmit(event) {
   event.preventDefault();
+  const username = loginInput.value;
   loginForm.classList.add(HIDDEN_CLASSNAME);
   localStorage.setItem(USERNAME_KEY,username);
   console.log(username);
