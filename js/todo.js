@@ -4,7 +4,7 @@ const toDoInput = toDoForm.querySelector("input");
 const toDoList = document.getElementById("todo-list");
 
 const TODOS_KEY = "todos";
-const toDos = [];
+let toDos = [];
 
 //저장
 function saveToDo(){
@@ -44,20 +44,10 @@ function handleToDoSubmit(event){
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
 
-function sayHELLO(item){
-    console.log("This is the turn of", item);
-}
-
 const savedToDos = localStorage.getItem(TODOS_KEY); 
 
 if(savedToDos !== null){
     const parsedToDos = JSON.parse(savedToDos);
-
-    console.log(parsedToDos);
-
-    parsedToDos.forEach((item) => console.log("This is the turn of ", item));
-   
-    // parsedToDos.forEach(sayHELLO);
-
-
+    toDos = parsedToDos;
+    parsedToDos.forEach(paintToDo);
 }
