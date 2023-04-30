@@ -3,11 +3,12 @@ const toDoInput = toDoForm.querySelector("input");
 
 const toDoList = document.getElementById("todo-list");
 
+const TODOS_KEY = "todos";
 const toDos = [];
 
 //저장
 function saveToDo(){
-    localStorage.setItem("todos", JSON.stringify(toDos));
+    localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }
 
 //삭제
@@ -29,7 +30,6 @@ function paintToDo(newTodo){
     li.appendChild(span);
     li.appendChild(button);
     toDoList.appendChild(li);
-
 }
 
 //엔터 키 눌렀을 때
@@ -43,3 +43,21 @@ function handleToDoSubmit(event){
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
+
+function sayHELLO(item){
+    console.log("This is the turn of", item);
+}
+
+const savedToDos = localStorage.getItem(TODOS_KEY); 
+
+if(savedToDos !== null){
+    const parsedToDos = JSON.parse(savedToDos);
+
+    console.log(parsedToDos);
+
+    parsedToDos.forEach((item) => console.log("This is the turn of ", item));
+   
+    // parsedToDos.forEach(sayHELLO);
+
+
+}
