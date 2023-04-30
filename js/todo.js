@@ -22,8 +22,9 @@ function deleteTodo(event){
 //화면에 리스트 보이기
 function paintToDo(newTodo){
     const li = document.createElement("li");
+    li.id = newTodo.id;
     const span = document.createElement("span");
-    span.innerText = newTodo;
+    span.innerText = newTodo.text;
     const button = document.createElement("button");
     button.innerText = " ❌";
     button.addEventListener("click", deleteTodo);
@@ -37,8 +38,13 @@ function handleToDoSubmit(event){
     event.preventDefault();
     const newToDo = toDoInput.value;
     toDoInput.value = ""; //입력 후 공백 만들기
-    toDos.push(newToDo);
-    paintToDo(newToDo);
+
+    const newToDoObj = {
+        text : newToDo, 
+        id : Date.now()
+    };
+    toDos.push(newToDoObj);
+    paintToDo(newToDoObj);
     saveToDo(newToDo);
 }
 
