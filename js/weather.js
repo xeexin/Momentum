@@ -1,11 +1,24 @@
+const API_KEY = "7d37eb150b99bc097591d527fd80c392";
+
+const weather = document.querySelector("#weather span:first-child");
+const city = document.querySelector("#weather span:last-child");
+
 function onGeoOk(position){
     //위도
     const lat =position.coords.latitude;     
     //경도
-    const lng =position.coords.longitude;
+    const lon =position.coords.longitude;
 
-    console.log("You live in ", lat, lng);
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+ 
+    fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      city.innerText = data.name;
+      weather.innerText = `${data.weather[0].main} / ${data.main.temp}`;
+    });
 };
+
 function onGeoError(){
     alert("Can't find you. No weather for you."); 
 };
