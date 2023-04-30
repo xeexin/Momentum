@@ -5,9 +5,9 @@ const city = document.querySelector("#weather span:last-child");
 
 function onGeoOk(position){
     //위도
-    const lat =position.coords.latitude;     
+    const lat = position.coords.latitude;     
     //경도
-    const lon =position.coords.longitude;
+    const lon = position.coords.longitude;
 
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
  
