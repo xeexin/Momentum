@@ -13,10 +13,11 @@ function saveToDo(){
 
 //삭제
 function deleteTodo(event){
-    //console.dir(event.target.parentElement.innerText);
-    //console.log(event.target.parentElement);
+   
     const li = event.target.parentElement;
     li.remove();
+    toDos = toDos.filter((toDo) => toDo.id != parseInt(li.id));
+    saveToDo(); 
 }
 
 //화면에 리스트 보이기
